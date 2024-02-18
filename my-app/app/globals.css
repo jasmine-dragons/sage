@@ -113,13 +113,24 @@ h1 {
 }
 
 main {
-  background: #ffffff;
+  /* background: #ffffff; */
+  background-image: url("../assets/Background.png");
   flex-grow: 1;
 }
 
 form {
   max-width: 300px;
   margin: 0 auto;
+}
+
+.login {
+  max-width: 18rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  background-color: #033305;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: rgba(3,51,5,.8);
 }
 
 h2 {
