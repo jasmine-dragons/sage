@@ -61,7 +61,7 @@ const Home = () => {
         </div>
         <div className="right">
           <div className="callButtons" style={{ backgroundColor: "#00B84A" }}>
-            <Typography variant="h4" onClick={requestCall}>Request a Call</Typography>
+            <Typography variant="h4" onClick={requestCall} className="noselect">Request a Call</Typography>
           </div>
           <div className="callButtons" style={{ backgroundColor: "#FFF065" }}>
             <Typography variant="h4">Request Favorites Only</Typography>

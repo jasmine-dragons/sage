@@ -47,7 +47,7 @@ const Lobby = ({
             marginTop: "2rem",
           }}
         >
-          <Button variant="contained" color="secondary">
+          <Button variant="contained" color="secondary" href="/register">
             New User
           </Button>
         </div>

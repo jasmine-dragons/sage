@@ -16,7 +16,7 @@ const SignIn = ({
     <div className="app">
       <main>
         <form className="login" onSubmit={handleSubmit}>
-          <Typography style={{textAlign: "center", color: "white"}}>Sign In</Typography>
+          <Typography style={{textAlign: "center", color: "white"}}>Log In</Typography>
           <div>
             <label htmlFor="username">Username</label>
             <input
@@ -40,7 +40,7 @@ const SignIn = ({
           </div>
           <ThemeProvider theme={theme}>
             <div style={{width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem"}}>
-              <Button variant="contained" style={{width: "12rem"}} href="/request-call">
+              <Button variant="contained" style={{width: "12rem"}} href="/home">
                 Log In
               </Button>
             </div>
