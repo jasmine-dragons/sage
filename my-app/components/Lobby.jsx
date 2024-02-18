@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme.js";
+// import logoImage from "/assets/logo.png";
 
 const Lobby = ({
   username,
@@ -13,18 +14,16 @@ const Lobby = ({
   return (
     <form className="login" onSubmit={handleSubmit}>
       {/* <h2>Enter a room</h2> */}
-      <div
+      <img
+        src="/assets/logo.png"
+        alt="Logo"
         style={{
-          backgroundColor: "#D9D9D9",
-          margin: "auto auto",
-          width: "14rem",
-          height: "14rem",
-          opacity: "100%",
+          width: "100%",
+          height: "auto",
           borderRadius: "1rem",
         }}
-      >
-        logo here
-      </div>
+      />
+
       {/* <ThemeProvider theme={theme}> */}
       <ThemeProvider theme={theme}>
         <div
@@ -52,31 +51,37 @@ const Lobby = ({
           </Button>
         </div>
       </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <div>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="field"
+            value={username}
+            onChange={handleUsernameChange}
+            required
+          />
+        </div>
 
-      {/* </ThemeProvider> */}
-
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="field"
-          value={username}
-          onChange={handleUsernameChange}
-          required
-        />
-      </div>
-
-      <div>
-        <label htmlFor="room">Room name:</label>
-        <input
-          type="text"
-          id="room"
-          value={roomName}
-          onChange={handleRoomNameChange}
-          required
-        />
-      </div>
-      <button type="submit">Submit</button>
+        <div>
+          <label htmlFor="room">
+            <body
+              style={{
+                color: "white",
+              }}
+            ></body>
+            Room Name
+          </label>
+          <input
+            type="text"
+            id="room"
+            value={roomName}
+            onChange={handleRoomNameChange}
+            required
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </ThemeProvider>
     </form>
   );
 };

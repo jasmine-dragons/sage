@@ -1,6 +1,6 @@
 .app {
     min-height: 100vh;
-    background-image: url("../assets/Background.png");
+    background-image: url("/assets/Background.png");
 }
 
 
@@ -111,7 +111,7 @@ h1 {
 
 main {
     /* background: #ffffff; */
-    background-image: url("../assets/Background.png");
+    background-image: url("/assets/Background.png");
     flex-grow: 1;
 }
 

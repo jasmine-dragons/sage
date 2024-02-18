@@ -116,7 +116,7 @@ h1 {
 
 main {
   /* background: #ffffff; */
-  background-image: url("../assets/Background.png");
+  background-image: url("/assets/Background.png");
   flex-grow: 1;
 }
 
@@ -177,6 +177,7 @@ button:hover {
   position: absolute;
   top: 0;
   right: 20px;
+  
 }
 .room > h3 {
   text-align: center;

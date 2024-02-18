@@ -5,9 +5,10 @@ import socket from "@/components/socket";
 import { useRouter } from "next/router";
 import React from "react";
 import { Typography } from "@mui/material";
-import './index.css'
+import "./index.css";
 import Webcam from "react-webcam";
-
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "../../theme.js";
 
 const Home = () => {
   const router = useRouter();
@@ -25,7 +26,6 @@ const Home = () => {
     onStartCall(roomID);
   });
 
-
   const requestCall = () => {
     socket.emit("call", {});
   };
@@ -42,40 +42,60 @@ const Home = () => {
     setCall({ callRequest: false });
   };
 
-
-  let body = null
+  let body = null;
   if (!call.callRequest) {
-    body = (<div className="app">
-      <main>
-        <div className="left">
-          <Typography variant="h4" color="white" style={{ flex: 1 }}>
-            Here's how you look:
-          </Typography>
-          <div className="iconImages">
-            <img src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color-round-2/254000/98-512.png" width="100rem" height="100rem" />
-            <img src="https://cdn.iconscout.com/icon/free/png-256/free-zoom-4062801-3357687.png?f=webp" width="100rem" height="100rem" />
-          </div>
-          <Webcam style={{ flex: 4, height: "700%", borderRadius: "1.5rem" }} />
-        </div>
-        <div className="right">
-          <div className="callButtons" onClick={requestCall} style={{ backgroundColor: "#00B84A" }}>
-            <Typography variant="h4" className="noselect">Request a Call</Typography>
-          </div>
-          <div className="callButtons" style={{ backgroundColor: "#FFF065" }}>
-            <Typography variant="h4">Request Favorites Only</Typography>
-          </div>
-        </div>
-      </main>
-    </div>)
-  }else{
-    body = <Notification name={call.caller} answer={answer} decline={decline} />
+    body = (
+      <div className="app">
+        <main>
+          <ThemeProvider theme={theme}>
+            <div className="left">
+              <Typography variant="h4" color="white" style={{ flex: 1 }}>
+                Here's how you look:
+              </Typography>
+              <div className="iconImages">
+                <img
+                  src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color-round-2/254000/98-512.png"
+                  width="100rem"
+                  height="100rem"
+                />
+                <img
+                  src="https://cdn.iconscout.com/icon/free/png-256/free-zoom-4062801-3357687.png?f=webp"
+                  width="100rem"
+                  height="100rem"
+                />
+              </div>
+              <Webcam
+                style={{ flex: 4, height: "700%", borderRadius: "1.5rem" }}
+              />
+            </div>
+            <div className="right">
+              <div
+                className="callButtons"
+                onClick={requestCall}
+                style={{ backgroundColor: "#00B84A" }}
+              >
+                <Typography variant="h4" className="noselect">
+                  Request a Call
+                </Typography>
+              </div>
+              <div
+                className="callButtons"
+                style={{ backgroundColor: "#FFF065" }}
+              >
+                <Typography variant="h4">Request Favorites Only</Typography>
+              </div>
+            </div>
+          </ThemeProvider>
+        </main>
+      </div>
+    );
+  } else {
+    body = (
+      <Notification name={call.caller} answer={answer} decline={decline} />
+    );
   }
 
-  return (
-    <div className="app">
-      {body}
-    </div>
-  );
+  return <div className="app">{body}</div>;
 };
 
 export default Home;
