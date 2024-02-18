@@ -17,7 +17,6 @@ const chatToken = (identity, config) => {
   });
   const token = generateToken(config, identity);
   token.addGrant(chatGrant);
-  token.identity = identity;
   return token;
 };
 
@@ -30,7 +29,6 @@ const videoToken = (identity, room, config) => {
   }
   const token = generateToken(config, identity);
   token.addGrant(videoGrant);
-  token.identity = identity;
   return token;
 };
 
@@ -48,7 +46,6 @@ const voiceToken = (identity, config) => {
   }
   const token = generateToken(config, identity);
   token.addGrant(voiceGrant);
-  token.identity = identity;
   return token;
 };
 
