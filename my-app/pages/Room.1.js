@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Video from "twilio-video";
 import Participant from "../components/Participant";
 
-const Room = ({ roomName, token, handleLogout }) => {
+export const Room = ({ roomName, token, handleLogout }) => {
   const [room, setRoom] = useState(null);
   const [participants, setParticipants] = useState([]);
 
@@ -58,11 +58,6 @@ const Room = ({ roomName, token, handleLogout }) => {
             participant={room.localParticipant}
           />
         ) : (
-          // <div>
-          //   {participants.map((p) => {
-          //     <Participant key={p.identity} participant={p.identity} />;
-          //   })}
-          // </div>
           ""
         )}
       </div>
@@ -71,5 +66,3 @@ const Room = ({ roomName, token, handleLogout }) => {
     </div>
   );
 };
-
-export default Room;
