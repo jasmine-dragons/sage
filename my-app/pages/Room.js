@@ -50,7 +50,9 @@ const Room = ({ roomName, token, handleLogout }) => {
   return (
     <div className="room app">
       <h2>Room: {roomName}</h2>
-      <button onClick={handleLogout}>Log out</button>
+      <button onClick={handleLogout} href="/home">
+        Log out
+      </button>
       <div
         style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
       >
