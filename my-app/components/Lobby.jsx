@@ -1,15 +1,7 @@
 import React from "react";
 import Button from '@mui/material/Button';
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-const { palette } = createTheme();
-const { augmentColor } = palette;
-const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
-const theme = createTheme({
-  palette: {
-    primary: createColor('#C7FFC6'),
-    secondary: createColor('#CEE2FF'),
-  }
-});
+import { ThemeProvider } from "@mui/material/styles";
+import theme from '../theme.js';
 
 const Lobby = ({
   username,
@@ -19,7 +11,7 @@ const Lobby = ({
   handleSubmit,
 }) => {
   return (
-    <form className="login seventyOpacity" onSubmit={handleSubmit}>
+    <form className="login" onSubmit={handleSubmit}>
       {/* <h2>Enter a room</h2> */}
       <div style={{ backgroundColor: "#D9D9D9", margin: "auto auto", width: "14rem", height: "14rem", opacity: "100%", borderRadius: "1rem" }}>
         logo here
@@ -27,7 +19,7 @@ const Lobby = ({
       {/* <ThemeProvider theme={theme}> */}
       <ThemeProvider theme={theme}>
         <div style={{ width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem" }}>
-          <Button variant="contained">
+          <Button variant="contained" href="/sign-in">
             Log In
           </Button>
         </div>
@@ -40,7 +32,7 @@ const Lobby = ({
 
       {/* </ThemeProvider> */}
       
-       <div>
+      <div>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -61,7 +53,7 @@ const Lobby = ({
           required
         />
       </div>
-       <button type="submit">Submit</button> 
+      <button type="submit">Submit</button>
     </form>
   );
 };
