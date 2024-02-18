@@ -35,8 +35,14 @@ def new_connection(json):
     print(request.sid)
     if request.sid not in ids:
         for id in ids:
-            socketio.emit("new person", to =id )
+            socketio.emit("new person", to = id )
         ids.append(request.sid)
-    
+        
+@socketio.on('call')
+def request_call(json):
+    for id in ids:
+        if(id!= request.sid):
+            socketio.emit("call incoming", to = id)
+        
 if __name__ == '__main__':
     socketio.run(app, port = 5000, cors_allowed_origins="*")
