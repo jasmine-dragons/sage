@@ -1,14 +1,55 @@
-.pop-up-container {
+.right-buttons-container {
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 75%;
     transform: translate(-50%, -50%);
-    width: 75vh; /* Adjust the width as needed */
-    height: 40vh; /* Adjust the height as needed */
-    background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
-    border-radius: 10px; /* Rounded corners, adjust as needed */
+    width: 80vh; /* Adjust the width as needed */
+    height: 30vh; /* Adjust the height as needed */
+    border-radius: 20px; /* Rounded corners, adjust as needed */
     z-index: 1000; /* Adjust the z-index to ensure it's on top of other elements */
-    padding: 0px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Add some space between the buttons */
+}
+
+button {
+    margin: auto;
+    border-radius: 20px; /* Set the border radius to 20px */
+    width: 357px;
+    height: 110px;
+    font-size: 40px;
+    margin: 8px auto;
+    
+}
+
+.answer-button{
+    background-color: #7FFF7C;
+    
+}
+.decline-button{
+    background-color: #FF0000;
+}
+.green-container {
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 90vh; /* Adjust the width as needed */
+    height: 80vh; /* Adjust the height as needed */
+    background-color: rgba(3, 51, 5, 0.71); /* Transparent black background */
+    border-radius: 20px; /* Rounded corners, adjust as needed */
+    z-index: 1000; /* Adjust the z-index to ensure it's on top of other elements */
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
 
     display: flex;
     flex-direction: column;
