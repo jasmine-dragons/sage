@@ -21,12 +21,28 @@ Sage allows anyone (but especially older adults) to connect with either random v
 ## UI / UX
 
 ### Lo-fi Protoypes
+<img width="400" alt="image" src="https://github.com/jasmine-dragons/sage/assets/40480195/d8c22d5d-2e3a-46a3-b282-11ecdc2c47ef">
+<img width="387" alt="image" src="https://github.com/jasmine-dragons/sage/assets/40480195/57ca75b6-3641-4e03-9649-13af446a10f6">
+
+We started our process with some concept sketching and lo-fi prototyping.
 
 ### Hi-fi Prototypes
+
+<img width="967" alt="image" src="https://github.com/jasmine-dragons/sage/assets/40480195/b5947e29-87ef-4576-8bbb-b9dfed6f4b9e">
+
+We started out with a mobile app concept (above), but we decided to switch to a web app to allow for larger text/accessibility.
+
+<img width="985" alt="image" src="https://github.com/jasmine-dragons/sage/assets/40480195/7a862992-b431-4b1a-aa1d-ab91baa882a2">
+
+We created a hi-fi prototype for our web app using Figma: https://www.figma.com/file/bkod0UOX2CC61OJcHg1562/sage?type=design&node-id=0%3A1&mode=design&t=6oTvIf2k9D5zww1V-1 
+
 
 ## Engineeering
 
 For frontend, we used a combination of Next.js, React, Material UI, and CSS. There are a variety of different screens including the login/sign-up page, the request call, and the call page. As this is a Next.js application, we used the serverless function as a primary backend. We used Twilio to implement the video call feature, and additionally ran a Flask server to support the sockets. Twilio's Programmable Video API was used to facilitate calls between users and Websockets were used in conjunction with Flask to match users online at the same time. 
+
+<img width="890" alt="image" src="https://github.com/jasmine-dragons/sage/assets/40480195/30e6013b-e1dc-4f0d-9062-1fe91a7fe94f">
+
 
 ## Screens
 Here are a few of our screens:
@@ -44,7 +60,7 @@ Here are a few of our screens:
 
 
 ### Request Call
-<img width="1299" alt="image" src="https://github.com/jasmine-dragons/sage/assets/40480195/3025b2c7-e4fd-431c-833f-dcb1cdf81ee2">
+<img width="1201" alt="image" src="https://github.com/jasmine-dragons/sage/assets/40480195/d5f2e59a-96be-43fe-9638-0af0176603c1">
 
 ### Video Call
 <img width="1355" alt="image" src="https://github.com/jasmine-dragons/sage/assets/40480195/9972287d-8aa3-4b24-b3cd-1435a14ac168">
@@ -52,7 +68,7 @@ Here are a few of our screens:
 
 ## Challenges we ran into
 
-Our first challenge was deciding on a project direction, but once we aligned on a problem space, it was also a challenge to imagine what a viable solution would look like. We also faced challenges in terms of finding appropriate ways to implement features we wanted, as well as combining the different aspects of our project while multiple people worked on different parts at the same time (e.g. frontend screens, video calling, notifications). For example one challenge was getting our videos to 
+Our first challenge was deciding on a project direction, but once we aligned on a problem space, it was also a challenge to imagine what a viable solution would look like. We also faced challenges in terms of finding appropriate ways to implement features we wanted, as well as combining the different aspects of our project while multiple people worked on different parts at the same time (e.g. frontend screens, video calling, notifications). For example one challenge was getting our videos to render, as well as working on the functionality of notifications.
 
 # Takeaways
 
