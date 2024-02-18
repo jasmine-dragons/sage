@@ -6,6 +6,7 @@ from twilio.jwt.access_token.grants import VideoGrant
 from flask_socketio import SocketIO
 import string
 import random
+from flask_cors import CORS, cross_origin
 
 roomN = 10
 caller = None
@@ -15,13 +16,17 @@ twilio_account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
 twilio_api_key_sid = os.environ.get('TWILIO_API_KEY_SID')
 twilio_api_key_secret = os.environ.get('TWILIO_API_KEY_SECRET')
 app = Flask(__name__)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 @app.route('/')
+@cross_origin
 def index():
     return render_template('index.html')
 
 @app.route('/login', methods=['POST'])
+@cross_origin
 def login():
     username = request.get_json(force=True).get('username')
     if not username:
@@ -34,12 +39,14 @@ def login():
 
 
 @socketio.on('connected')
+@cross_origin
 def new_connection(json):
     print("new connect" + request.sid)
     if request.sid not in ids:
         ids.append(request.sid)
         
 @socketio.on('call')
+@cross_origin
 def request_call(json):
     global caller
     print("call request from "+ request.sid)
@@ -51,6 +58,7 @@ def request_call(json):
             socketio.emit("call incoming", caller ,to = id)
             
 @socketio.on('answer call')
+@cross_origin
 def answer_call(json):
     print("starting call")
     roomID ="".join(random.choices(string.ascii_uppercase + string.digits, k = roomN))
@@ -58,4 +66,4 @@ def answer_call(json):
     socketio.emit("start call", roomID, to=request.sid)
 
 if __name__ == '__main__':
-    socketio.run(app, port = 5000, resources={r"/*":{"*"}})
+    socketio.run(app, port = 5000, cors_allowed_origins="*")
