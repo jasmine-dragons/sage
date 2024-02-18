@@ -7,7 +7,6 @@ const socket = io(URL, {
     origin: "",
   },
   allowEIO3: true,
-  transports: ["websocket"],
 });
 console.log(socket);
 export default socket;
