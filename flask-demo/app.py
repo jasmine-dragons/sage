@@ -65,5 +65,4 @@ def answer_call(json):
     socketio.emit("start call", roomID, to=request.sid)
 
 if __name__ == '__main__':
-    socketio.run(app, port = 5000, cors_allowed_origins="*", allowEIO3= True,
-  transports= ["websocket"],)
+    socketio.run(app, port = 5000, cors_allowed_origins="*", allowEIO3= True,)
