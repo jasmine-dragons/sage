@@ -15,8 +15,8 @@ const Register = ({
   return (
     <div className="app">
       <main>
-        <form className="login" onSubmit={handleSubmit}>
-          <Typography style={{textAlign: "center", color: "white"}}>Sign In</Typography>
+        <form className="signin" onSubmit={handleSubmit}>
+          <Typography style={{textAlign: "center", color: "white"}}>Register</Typography>
           <div>
             <label htmlFor="username">Username</label>
             <input
