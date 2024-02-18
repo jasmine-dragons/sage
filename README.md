@@ -30,7 +30,7 @@ We started out with a mobile app concept (above), but we decided to switch to a 
 
 <img width="985" alt="image" src="https://github.com/jasmine-dragons/sage/assets/40480195/7a862992-b431-4b1a-aa1d-ab91baa882a2">
 
-We created a hi-fi prototype for our web app using Figma: https://www.figma.com/file/bkod0UOX2CC61OJcHg1562/sage?type=design&node-id=0%3A1&mode=design&t=6oTvIf2k9D5zww1V-1 
+We created a hi-fi prototype for our web app using [Figma](https://www.figma.com/file/bkod0UOX2CC61OJcHg1562/sage?type=design&node-id=0%3A1&mode=design&t=6oTvIf2k9D5zww1V-1)
 
 
 ## Engineeering
