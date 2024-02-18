@@ -30,11 +30,20 @@ const Lobby = ({
           style={{
             width: "100%",
             display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
             justifyContent: "center",
-            marginTop: "2rem",
           }}
         >
-          <Button variant="contained" href="/sign-in">
+          <h1 style={{ fontWeight: "bold" }}>Sage</h1>
+          <div style={{ textAlign: "center" }}>
+            connecting generations one meeting at a time
+          </div>
+          <Button
+            variant="contained"
+            href="/sign-in"
+            style={{ marginTop: "2rem" }}
+          >
             Log In
           </Button>
         </div>
@@ -43,7 +52,6 @@ const Lobby = ({
             width: "100%",
             display: "flex",
             justifyContent: "center",
-            marginTop: "2rem",
           }}
         >
           <Button variant="contained" color="secondary" href="/register">

@@ -86,7 +86,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   color: #333e5a;
   min-height: 100%;
 }
