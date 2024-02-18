@@ -6,7 +6,7 @@ from twilio.jwt.access_token.grants import VideoGrant
 from flask_socketio import SocketIO
 import string
 import random
-# from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 roomN = 10
 caller = None
@@ -16,6 +16,7 @@ twilio_account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
 twilio_api_key_sid = os.environ.get('TWILIO_API_KEY_SID')
 twilio_api_key_secret = os.environ.get('TWILIO_API_KEY_SECRET')
 app = Flask(__name__)
+CORS(app)
 # cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 socketio = SocketIO(app, cors_allowed_origins="*")
@@ -65,4 +66,4 @@ def answer_call(json):
     socketio.emit("start call", roomID, to=request.sid)
 
 if __name__ == '__main__':
-    socketio.run(app, cors_allowed_origins="*", allowEIO3= True,)
+    socketio.run(app, port=5000, cors_allowed_origins="*", allowEIO3= True,)
