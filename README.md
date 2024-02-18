@@ -1,12 +1,4 @@
-# treehacks
-old people are lonely
-
-- [currently following](https://www.twilio.com/en-us/blog/build-video-chat-application-python-javascript-twilio-programmable-video) 
-- Generating an access token for a participant
-
-
-npm run dev in my-app
-flask run in flask-demo
+# Sage - Treehacks 2024
 
 # Background
 
@@ -19,6 +11,10 @@ Sage allows anyone (but especially older adults) to connect with either random v
 # How is Sage built?
 
 ## UI / UX
+
+### User Story
+![Sage - TREEHACKS 2024](https://github.com/jasmine-dragons/sage/assets/44332326/108653ae-fb3b-4671-a408-46a0fc8f5d84)
+We first started with a user story to better understand our target user.
 
 ### Lo-fi Protoypes
 <img width="400" alt="image" src="https://github.com/jasmine-dragons/sage/assets/40480195/d8c22d5d-2e3a-46a3-b282-11ecdc2c47ef">
