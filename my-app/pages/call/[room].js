@@ -1,3 +1,4 @@
+"use client"
 import { useRouter } from 'next/router'
 import { useState, useEffect, useCallback   } from "react";
 import Room from "@/pages/Room";

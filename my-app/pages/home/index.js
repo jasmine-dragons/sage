@@ -12,24 +12,23 @@ import Webcam from "react-webcam";
 const Home = () => {
   const router = useRouter();
   const [call, setCall] = useState({ callRequest: false, caller: "bob" });
-
-  useEffect(() => {
-    socket.on("connect", () => {
-      socket.emit("connected", {});
-    });
-    socket.on("disconnect", () => {
-      socket.emit("disconnected", {});
-    });
-    socket.on("call incoming", (callerID) => {
-      setCall({ callRequest: true, caller: callerID });
-    });
-    socket.on("start call", (roomID) => {
-      onStartCall(roomID);
-    });
+  socket.on("connect", () => {
+    socket.emit("connected", {});
   });
+  socket.on("disconnect", () => {
+    socket.emit("disconnected", {});
+  });
+  socket.on("call incoming", (callerID) => {
+    setCall({ callRequest: true, caller: callerID });
+  });
+  socket.on("start call", (roomID) => {
+    onStartCall(roomID);
+  });
+
 
   const requestCall = () => {
     socket.emit("call", {});
+    alert("call")
   };
 
   const answer = () => {
@@ -60,8 +59,8 @@ const Home = () => {
           <Webcam style={{ flex: 4, height: "700%", borderRadius: "1.5rem" }} />
         </div>
         <div className="right">
-          <div className="callButtons" style={{ backgroundColor: "#00B84A" }}>
-            <Typography variant="h4" onClick={requestCall} className="noselect">Request a Call</Typography>
+          <div className="callButtons" onClick={requestCall} style={{ backgroundColor: "#00B84A" }}>
+            <Typography variant="h4" className="noselect">Request a Call</Typography>
           </div>
           <div className="callButtons" style={{ backgroundColor: "#FFF065" }}>
             <Typography variant="h4">Request Favorites Only</Typography>
