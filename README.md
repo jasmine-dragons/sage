@@ -68,7 +68,7 @@ Here are a few of our screens:
 
 ## Challenges we ran into
 
-Our first challenge was deciding on a project direction, but once we aligned on a problem space, it was also a challenge to imagine what a viable solution would look like. We also faced challenges in terms of finding appropriate ways to implement features we wanted, as well as combining the different aspects of our project while multiple people worked on different parts at the same time (e.g. frontend screens, video calling, notifications). For example one challenge was getting our videos to 
+Our first challenge was deciding on a project direction, but once we aligned on a problem space, it was also a challenge to imagine what a viable solution would look like. We also faced challenges in terms of finding appropriate ways to implement features we wanted, as well as combining the different aspects of our project while multiple people worked on different parts at the same time (e.g. frontend screens, video calling, notifications). For example one challenge was getting our videos to render, as well as working on the functionality of notifications.
 
 # Takeaways
 
