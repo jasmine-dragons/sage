@@ -19,28 +19,28 @@ const Lobby = ({
   handleSubmit,
 }) => {
   return (
-    <div className="login seventyOpacity" onSubmit={handleSubmit}>
+    <form className="login seventyOpacity" onSubmit={handleSubmit}>
       {/* <h2>Enter a room</h2> */}
-      <div style={{backgroundColor: "#D9D9D9", margin: "auto auto", width: "14rem", height: "14rem", opacity: "100%", borderRadius:"1rem"}}>
+      <div style={{ backgroundColor: "#D9D9D9", margin: "auto auto", width: "14rem", height: "14rem", opacity: "100%", borderRadius: "1rem" }}>
         logo here
       </div>
       {/* <ThemeProvider theme={theme}> */}
       <ThemeProvider theme={theme}>
-        <div style={{width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem"}}>
+        <div style={{ width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem" }}>
           <Button variant="contained">
             Log In
           </Button>
         </div>
-        <div style={{width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem"}}>
+        <div style={{ width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem" }}>
           <Button variant="contained" color="secondary">
             New User
           </Button>
         </div>
       </ThemeProvider>
-      
+
       {/* </ThemeProvider> */}
       
-      {/* <div>
+       <div>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -60,9 +60,9 @@ const Lobby = ({
           onChange={handleRoomNameChange}
           required
         />
-      </div> */}
-      {/* <button type="submit">Submit</button> */}
-    </div>
+      </div>
+       <button type="submit">Submit</button> 
+    </form>
   );
 };
 
