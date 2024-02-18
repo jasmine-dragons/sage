@@ -51,7 +51,7 @@ const Register = ({
           </div>
           <ThemeProvider theme={theme}>
             <div style={{width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem"}}>
-              <Button color="secondary" variant="contained" style={{width: "12rem"}} href="/request-call">
+              <Button color="secondary" variant="contained" style={{width: "12rem"}} href="/home">
                 Create Account
               </Button>
             </div>
