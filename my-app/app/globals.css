@@ -1,0 +1,224 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #16abff33 0deg,
+    #0885ff33 55deg,
+    #54d6ff33 120deg,
+    #0071ff33 160deg,
+    transparent 360deg
+  );
+  --secondary-glow: radial-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+
+  --tile-start-rgb: 239, 245, 249;
+  --tile-end-rgb: 228, 232, 233;
+  --tile-border: conic-gradient(
+    #00000080,
+    #00000040,
+    #00000030,
+    #00000020,
+    #00000010,
+    #00000010,
+    #00000080
+  );
+
+  --callout-rgb: 238, 240, 241;
+  --callout-border-rgb: 172, 175, 176;
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+
+    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+    --secondary-glow: linear-gradient(
+      to bottom right,
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0.3)
+    );
+
+    --tile-start-rgb: 2, 13, 46;
+    --tile-end-rgb: 2, 5, 19;
+    --tile-border: conic-gradient(
+      #ffffff80,
+      #ffffff40,
+      #ffffff30,
+      #ffffff20,
+      #ffffff10,
+      #ffffff10,
+      #ffffff80
+    );
+
+    --callout-rgb: 20, 20, 20;
+    --callout-border-rgb: 108, 108, 108;
+    --card-rgb: 100, 100, 100;
+    --card-border-rgb: 200, 200, 200;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #333e5a;
+  min-height: 100%;
+}
+
+header {
+  background: #f0293e;
+  color: #fff;
+  text-align: center;
+  flex-grow: 0;
+  margin-bottom: 2em;
+}
+
+h1 {
+  font-weight: 300;
+  padding: 0.4em 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  background: #ffffff;
+  flex-grow: 1;
+}
+
+form {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-weight: 300;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+form > div {
+  width: 100%;
+  margin-bottom: 1em;
+}
+form > div > label {
+  display: block;
+  margin-bottom: 0.3em;
+}
+form > div > input {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  padding: 0.4em;
+  border-radius: 6px;
+  border: 1px solid #333e5a;
+}
+
+button {
+  background: #333e5a;
+  color: #fff;
+  font-size: 16px;
+  padding: 0.4em;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+button:hover {
+  filter: brightness(150%);
+}
+
+.room {
+  position: relative;
+}
+.room button {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+.room > h3 {
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 1em;
+}
+
+.local-participant {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.remote-participants {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0 2em 2em;
+}
+.participant {
+  background: #333e5a;
+  padding: 10px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.participant:last-child {
+  margin-right: 0;
+}
+.participant h3 {
+  text-align: center;
+  padding-bottom: 0.5em;
+  color: #fff;
+}
+
+video {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+footer {
+  background: #333e5a;
+  color: #fff;
+  text-align: center;
+  flex-grow: 0;
+  padding: 1em 0;
+}
+
+footer a {
+  color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
