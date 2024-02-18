@@ -51,7 +51,7 @@ def request_call(json):
 @socketio.on('answer call')
 def answer_call(json):
     print("starting call")
-    socketio.emit("start call", "".join(random.choices(string.ascii_uppercase +string.digits, k=roomN)), to=caller)
+    socketio.emit("start call", "".join(random.choices(string.ascii_uppercase + string.digits, k = roomN)), to=caller)
         
 @socketio.on("disconnected")
 def disconnect(json):
