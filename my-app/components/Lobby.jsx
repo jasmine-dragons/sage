@@ -13,23 +13,23 @@ const Lobby = ({
   return (
     <form className="login" onSubmit={handleSubmit}>
       {/* <h2>Enter a room</h2> */}
-      <div style={{backgroundColor: "#D9D9D9", margin: "auto auto", width: "14rem", height: "14rem", opacity: "100%", borderRadius:"1rem"}}>
+      <div style={{ backgroundColor: "#D9D9D9", margin: "auto auto", width: "14rem", height: "14rem", opacity: "100%", borderRadius: "1rem" }}>
         logo here
       </div>
       {/* <ThemeProvider theme={theme}> */}
       <ThemeProvider theme={theme}>
-        <div style={{width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem"}}>
+        <div style={{ width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem" }}>
           <Button variant="contained" href="/sign-in">
             Log In
           </Button>
         </div>
-        <div style={{width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem"}}>
+        <div style={{ width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem" }}>
           <Button variant="contained" color="secondary">
             New User
           </Button>
         </div>
       </ThemeProvider>
-      
+
       {/* </ThemeProvider> */}
       
       <div>

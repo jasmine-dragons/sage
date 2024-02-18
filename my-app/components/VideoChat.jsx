@@ -27,8 +27,6 @@ const VideoChat = () => {
       });
       let body = await data.json();
       body = JSON.parse(body);
-      //   console.log(JSON.parse(body));
-      console.log(body.token);
       setToken(body.token);
     },
     [username, roomName]
@@ -37,8 +35,6 @@ const VideoChat = () => {
   const handleLogout = useCallback((event) => {
     setToken(null);
   }, []);
-
-  console.log(token);
 
   return (
     <div>
