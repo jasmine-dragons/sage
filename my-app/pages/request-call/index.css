@@ -30,6 +30,7 @@ main {
   border-radius: 1rem;
   background-color: rgba(3,11,51,.7);
   padding: 1.5rem;
+  width: 40%;
 }
 
 .iconImages {
