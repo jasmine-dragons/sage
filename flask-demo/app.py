@@ -6,7 +6,7 @@ from twilio.jwt.access_token.grants import VideoGrant
 from flask_socketio import SocketIO
 import string
 import random
-from flask_cors import CORS, cross_origin
+# from flask_cors import CORS, cross_origin
 
 roomN = 10
 caller = None
