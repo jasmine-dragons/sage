@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Video from "twilio-video";
 import Participant from "../components/Participant";
-import "./Room.css"
+import "./Room.css";
 const Room = ({ roomName, token, handleLogout }) => {
   const [room, setRoom] = useState(null);
   const [participants, setParticipants] = useState([]);
@@ -51,7 +51,9 @@ const Room = ({ roomName, token, handleLogout }) => {
     <div className="room app">
       <h2>Room: {roomName}</h2>
       <button onClick={handleLogout}>Log out</button>
-      <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+      <div
+        style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+      >
         <div className="local-participant">
           {room ? (
             <Participant
@@ -59,11 +61,6 @@ const Room = ({ roomName, token, handleLogout }) => {
               participant={room.localParticipant}
             />
           ) : (
-            // <div>
-            //   {participants.map((p) => {
-            //     <Participant key={p.identity} participant={p.identity} />;
-            //   })}
-            // </div>
             ""
           )}
         </div>
