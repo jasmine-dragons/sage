@@ -6,7 +6,6 @@ const socket = io(URL, {
   cors: {
     origin: "",
   },
-  allowEIO3: true,
 });
 console.log(socket);
 export default socket;
