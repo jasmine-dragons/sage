@@ -27,6 +27,8 @@ const Home = () => {
   });
 
   const requestCall = () => {
+    console.log("requesting call");
+    console.log(socket);
     socket.emit("call", {});
   };
 
