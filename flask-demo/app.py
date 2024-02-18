@@ -35,6 +35,10 @@ def login():
     token.add_grant(VideoGrant(room='My Room'))
     return {'token': token.to_jwt()}
 
+@app.route('/hello', methods=['GET'])
+def hello():
+    return {'message': 'hello'}
+
 
 @socketio.on('connected')
 def new_connection(json):
