@@ -26,31 +26,33 @@ const VideoChat = () => {
         }),
       });
       let body = await data.json();
-      body = JSON.parse(body);
+      body = await JSON.parse(body);
       setToken(body.token);
     },
-    [username, roomName]
+    [roomName, username]
   );
 
   const handleLogout = useCallback((event) => {
     setToken(null);
   }, []);
 
-  return (
-    <div>
-      {token ? (
-        <Room roomName={roomName} token={token} handleLogout={handleLogout} />
-      ) : (
-        <Lobby
-          username={username}
-          roomName={roomName}
-          handleUsernameChange={handleUsernameChange}
-          handleRoomNameChange={handleRoomNameChange}
-          handleSubmit={handleSubmit}
-        />
-      )}
-    </div>
-  );
+  let render;
+  if (token) {
+    render = (
+      <Room roomName={roomName} token={token} handleLogout={handleLogout} />
+    );
+  } else {
+    render = (
+      <Lobby
+        username={username}
+        roomName={roomName}
+        handleUsernameChange={handleUsernameChange}
+        handleRoomNameChange={handleRoomNameChange}
+        handleSubmit={handleSubmit}
+      />
+    );
+  }
+  return render;
 };
 
 export default VideoChat;
