@@ -4,8 +4,10 @@ console.log(process.env.NEXT_PUBLIC_SOCKET_URL);
 const URL = process.env.NEXT_PUBLIC_SOCKET_URL;
 const socket = io(URL, {
   cors: {
-    origin: "*",
+    origin: "",
   },
+  allowEIO3: true,
+  transports: ["websocket"],
 });
 console.log(socket);
 export default socket;
