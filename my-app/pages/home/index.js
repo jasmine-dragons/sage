@@ -28,7 +28,6 @@ const Home = () => {
 
   const requestCall = () => {
     socket.emit("call", {});
-    alert("call")
   };
 
   const answer = () => {
