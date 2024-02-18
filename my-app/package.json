@@ -12,6 +12,7 @@
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "twilio": "^4.22.0"
+    "twilio": "^4.22.0",
+    "twilio-video": "^2.2.0"
   }
 }

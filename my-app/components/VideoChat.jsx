@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import Lobby from "./Lobby";
+import Room from "@/pages/Room";
 
 const VideoChat = () => {
   const [username, setUsername] = useState("");
@@ -23,11 +24,12 @@ const VideoChat = () => {
           identity: username,
           room: roomName,
         }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((res) => res.json());
-      setToken(data.token);
+      });
+      let body = await data.json();
+      body = JSON.parse(body);
+      //   console.log(JSON.parse(body));
+      console.log(body.token);
+      setToken(body.token);
     },
     [username, roomName]
   );
@@ -36,27 +38,23 @@ const VideoChat = () => {
     setToken(null);
   }, []);
 
-  let render;
-  if (token) {
-    render = (
-      <div>
-        <p>Username: {username}</p>
-        <p>Room name: {roomName}</p>
-        <p>Token: {token}</p>
-      </div>
-    );
-  } else {
-    render = (
-      <Lobby
-        username={username}
-        roomName={roomName}
-        handleUsernameChange={handleUsernameChange}
-        handleRoomNameChange={handleRoomNameChange}
-        handleSubmit={handleSubmit}
-      />
-    );
-  }
-  return render;
+  console.log(token);
+
+  return (
+    <div>
+      {token ? (
+        <Room roomName={roomName} token={token} handleLogout={handleLogout} />
+      ) : (
+        <Lobby
+          username={username}
+          roomName={roomName}
+          handleUsernameChange={handleUsernameChange}
+          handleRoomNameChange={handleRoomNameChange}
+          handleSubmit={handleSubmit}
+        />
+      )}
+    </div>
+  );
 };
 
 export default VideoChat;

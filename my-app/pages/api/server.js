@@ -1,6 +1,10 @@
 const sendTokenResponse = (token, res) => {
-  res.set("Content-Type", "application/json");
-  res.send(
+  console.log(
+    JSON.stringify({
+      token: token.toJwt(),
+    })
+  );
+  res.status(200).json(
     JSON.stringify({
       token: token.toJwt(),
     })
