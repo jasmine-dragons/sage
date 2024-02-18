@@ -5,7 +5,7 @@ import './index.css'
 import { ThemeProvider } from "@mui/material/styles";
 import theme from '../../theme.js';
 
-const SignIn = ({
+const Register = ({
   username,
   handleUsernameChange,
   roomName,
@@ -38,10 +38,21 @@ const SignIn = ({
               required
             />
           </div>
+
+          <div>
+            <label htmlFor="password">Confirm Password</label>
+            <input
+              type="text"
+              id="password"
+              // value={password}
+              // onChange={handleRoomNameChange}
+              required
+            />
+          </div>
           <ThemeProvider theme={theme}>
             <div style={{width: "100%", display: "flex", justifyContent: "center", marginTop: "2rem"}}>
-              <Button variant="contained" style={{width: "12rem"}} href="/request-call">
-                Log In
+              <Button color="secondary" variant="contained" style={{width: "12rem"}} href="/request-call">
+                Create Account
               </Button>
             </div>
           </ThemeProvider>
@@ -51,4 +62,4 @@ const SignIn = ({
   );
 };
 
-export default SignIn;
+export default Register;
