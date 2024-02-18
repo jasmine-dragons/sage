@@ -1,0 +1,15 @@
+.pop-up-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75vh; /* Adjust the width as needed */
+    height: 40vh; /* Adjust the height as needed */
+    background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+    border-radius: 10px; /* Rounded corners, adjust as needed */
+    z-index: 1000; /* Adjust the z-index to ensure it's on top of other elements */
+    padding: 0px;
+
+    display: flex;
+    flex-direction: column;
+}

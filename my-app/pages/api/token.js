@@ -2,11 +2,12 @@ const twilio = require("twilio");
 const AccessToken = twilio.jwt.AccessToken;
 const { ChatGrant, VideoGrant, VoiceGrant } = AccessToken;
 
-const generateToken = (config) => {
+const generateToken = (config, identity) => {
   return new AccessToken(
     config.twilio.accountSid,
     config.twilio.apiKey,
-    config.twilio.apiSecret
+    config.twilio.apiSecret,
+    { identity }
   );
 };
 
@@ -14,7 +15,7 @@ const chatToken = (identity, config) => {
   const chatGrant = new ChatGrant({
     serviceSid: config.twilio.chatService,
   });
-  const token = generateToken(config);
+  const token = generateToken(config, identity);
   token.addGrant(chatGrant);
   token.identity = identity;
   return token;
@@ -27,7 +28,7 @@ const videoToken = (identity, room, config) => {
   } else {
     videoGrant = new VideoGrant();
   }
-  const token = generateToken(config);
+  const token = generateToken(config, identity);
   token.addGrant(videoGrant);
   token.identity = identity;
   return token;
@@ -45,7 +46,7 @@ const voiceToken = (identity, config) => {
       incomingAllow: config.twilio.incomingAllow,
     });
   }
-  const token = generateToken(config);
+  const token = generateToken(config, identity);
   token.addGrant(voiceGrant);
   token.identity = identity;
   return token;
